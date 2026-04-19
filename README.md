@@ -43,6 +43,7 @@ Please see [the official documentation](https://docs.mailcow.email/) for install
    - Main name: `ApolloMC Mail`
    - Apps name: `ApolloMC Apps` (optional)
 3. In the same page, upload your ApolloMC light/dark logos in the logo section and save.
+4. Optional: set `PRODUCT_NAME`, `DEFAULT_TITLE_NAME`, and `DEFAULT_MAIN_NAME` in your environment if you want different default branding values.
 
 ## Quick setup tutorial
 
@@ -53,7 +54,8 @@ Please see [the official documentation](https://docs.mailcow.email/) for install
    - `TXT` SPF (example): `v=spf1 mx -all`
    - `TXT` DKIM -> copy from **Configuration > DKIM**
    - `TXT` DMARC (example): `v=DMARC1; p=quarantine; rua=mailto:postmaster@example.com`
-   - `CNAME` autodiscover/autoconfig -> `mail.example.com` (optional but recommended)
+   - `CNAME` `autodiscover.example.com` -> `mail.example.com` (optional but recommended)
+   - `CNAME` `autoconfig.example.com` -> `mail.example.com` (optional but recommended)
 3. Wait for DNS propagation, then verify records from the DNS information/check tools in the **Domains** area (or with `dig`/external DNS checkers).
 4. In the same page, open the **Mailboxes** tab and create accounts:
    - Click add mailbox
