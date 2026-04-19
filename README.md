@@ -35,6 +35,40 @@ Please see [the official documentation](https://docs.mailcow.email/) for install
 
 🐛 **If you found a critical security issue, please mail us to [info at servercow.de](mailto:info@servercow.de).**
 
+## Branding customization
+
+1. Log in as **admin** and open **System > Configuration > Customization**.
+2. In **UI labels and texts**, set your branding values (example):
+   - Title name: `ApolloMC Mail`
+   - Main name: `ApolloMC Mail`
+   - Apps name: `ApolloMC Apps` (optional)
+3. In the same page, upload your ApolloMC light/dark logos in the logo section and save.
+4. Optional: set `PRODUCT_NAME`, `DEFAULT_TITLE_NAME`, and `DEFAULT_MAIN_NAME` in your mailcow environment file (for example `mailcow.conf`/`.env` used by Docker Compose), then restart the web stack to apply new defaults.
+
+## Quick setup tutorial
+
+1. Open the **Email** menu, click **mailcow Configuration**, then in the **Domains** tab add your domain (example: `example.com`).
+2. In your DNS provider, add these records for that domain:
+   - `MX` -> your mail host (example: `mail.example.com`)
+   - `A/AAAA` for `mail.example.com` -> your server IP
+   - `TXT` SPF (example): `v=spf1 mx -all`
+   - `TXT` DKIM -> copy from **Configuration > DKIM**
+   - `TXT` DMARC (example): `v=DMARC1; p=quarantine; rua=mailto:postmaster@example.com`
+   - `CNAME` `autodiscover.example.com` -> `mail.example.com` (optional but recommended)
+   - `CNAME` `autoconfig.example.com` -> `mail.example.com` (optional but recommended)
+3. Wait for DNS propagation, then verify records from the DNS information/check tools in the **Domains** area (or with `dig`/external DNS checkers).
+4. In the same page, open the **Mailboxes** tab and create accounts:
+   - Click add mailbox
+   - Set local part (e.g. `info`)
+   - Select domain
+   - Set password/quota and save
+5. Test login in webmail (SOGo) and with an email client:
+   - IMAP: port 993 (SSL/TLS)
+   - SMTP submission: port 587 (STARTTLS) or 465 (TLS)
+   - Username: full email address
+6. Send a test mail to/from an external mailbox and confirm SPF/DKIM/DMARC pass in message headers.
+7. Optional hardening: enforce 2FA for admins and review spam/ratelimit settings after first successful delivery.
+
 ## Cowmunity
 
 [mailcow community](https://community.mailcow.email)

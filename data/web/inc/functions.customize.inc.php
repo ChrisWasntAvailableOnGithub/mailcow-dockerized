@@ -326,9 +326,12 @@ function customize($_action, $_item, $_data = null) {
         case 'ui_texts':
           try {
             $mailcow_hostname = strtolower(getenv("MAILCOW_HOSTNAME"));
+            $product_name = getenv("PRODUCT_NAME") ?: "ApolloMC Mail";
+            $default_title_name = getenv("DEFAULT_TITLE_NAME") ?: "$mailcow_hostname - $product_name";
+            $default_main_name = getenv("DEFAULT_MAIN_NAME") ?: "$mailcow_hostname - $product_name";
 
-            $data['title_name'] = ($title_name = $redis->get('TITLE_NAME')) ? $title_name : "$mailcow_hostname - mail UI";
-            $data['main_name'] = ($main_name = $redis->get('MAIN_NAME')) ? $main_name : "$mailcow_hostname - mail UI";
+            $data['title_name'] = ($title_name = $redis->get('TITLE_NAME')) ? $title_name : $default_title_name;
+            $data['main_name'] = ($main_name = $redis->get('MAIN_NAME')) ? $main_name : $default_main_name;
             $data['apps_name'] = ($apps_name = $redis->get('APPS_NAME')) ? $apps_name : $lang['header']['apps'];
             $data['help_text'] = ($help_text = $redis->get('HELP_TEXT')) ? $help_text : false;
             if (!empty($redis->get('UI_IMPRESS'))) {
