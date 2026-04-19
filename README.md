@@ -35,7 +35,7 @@ Please see [the official documentation](https://docs.mailcow.email/) for install
 
 🐛 **If you found a critical security issue, please mail us to [info at servercow.de](mailto:info@servercow.de).**
 
-## ApolloMC branding
+## Branding customization
 
 1. Log in as **admin** and open **System > Configuration > Customization**.
 2. In **UI labels and texts**, set your branding values (example):
@@ -43,7 +43,7 @@ Please see [the official documentation](https://docs.mailcow.email/) for install
    - Main name: `ApolloMC Mail`
    - Apps name: `ApolloMC Apps` (optional)
 3. In the same page, upload your ApolloMC light/dark logos in the logo section and save.
-4. Optional: set `PRODUCT_NAME`, `DEFAULT_TITLE_NAME`, and `DEFAULT_MAIN_NAME` in your environment if you want different default branding values.
+4. Optional: set `PRODUCT_NAME`, `DEFAULT_TITLE_NAME`, and `DEFAULT_MAIN_NAME` in your mailcow environment file (for example `mailcow.conf`/`.env` used by Docker Compose), then restart the web stack to apply new defaults.
 
 ## Quick setup tutorial
 
