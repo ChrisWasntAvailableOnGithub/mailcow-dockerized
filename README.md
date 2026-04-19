@@ -46,7 +46,7 @@ Please see [the official documentation](https://docs.mailcow.email/) for install
 
 ## Quick setup tutorial
 
-1. Open **Email > mailcow Configuration** and in the **Domains** tab add your domain (example: `example.com`).
+1. Open the **Email** menu, click **mailcow Configuration**, then in the **Domains** tab add your domain (example: `example.com`).
 2. In your DNS provider, add these records for that domain:
    - `MX` -> your mail host (example: `mail.example.com`)
    - `A/AAAA` for `mail.example.com` -> your server IP
