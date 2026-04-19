@@ -38,7 +38,7 @@ Please see [the official documentation](https://docs.mailcow.email/) for install
 ## ApolloMC branding
 
 1. Log in as **admin** and open **System > Configuration > Customization**.
-2. In **UI labels and texts**, set:
+2. In **UI labels and texts**, set your branding values (example):
    - Title name: `ApolloMC Mail`
    - Main name: `ApolloMC Mail`
    - Apps name: `ApolloMC Apps` (optional)
